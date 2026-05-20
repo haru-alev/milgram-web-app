@@ -1,0 +1,105 @@
+// шрифты
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('../assets/fonts/JetBrainsMono.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'StickNoBills';
+  src: url('../assets/fonts/StickNoBills.ttf') format('truetype'); 
+  font-weight: 300;
+  font-style: normal;
+}
+
+$font-terminal: 'JetBrainsMono', monospace;
+$font-names: 'StickNoBills', serif;
+
+
+// цвета персонажей
+$color-jackalop: #FFD600;
+$color-es:       #FF0000;
+$color-haruka:   #013EDE;
+$color-yuno:     #F97FB5;
+$color-futa:     #EA170A;
+$color-mu:       #D6C603;
+$color-shidou:   #554FA1;
+$color-mahiru:   #F79F01;
+$color-kazui:    #00AFDF;
+$color-amane:    #00BBB4;
+$color-mikoto:   #5F7993;
+$color-kotoko:   #C911BE;
+
+$characters: (
+  "jackalop": $color-jackalop,
+  "es":       $color-es,
+  "haruka":   $color-haruka,
+  "yuno":     $color-yuno,
+  "futa":     $color-futa,
+  "mu":       $color-mu,
+  "shidou":   $color-shidou,
+  "mahiru":   $color-mahiru,
+  "kazui":    $color-kazui,
+  "amane":    $color-amane,
+  "mikoto":   $color-mikoto,
+  "kotoko":   $color-kotoko
+);
+
+
+// цвета терминала
+$terminal-elements1: #706B70;
+$terminal-elements2: #6A0000;
+$terminal-name:      #DFE0E0;
+$terminal-frame:     #222222;
+$terminal-warp:      #0A0A0A;
+$terminal-fond:      #000000;
+$terminal-voiding:   #FF0000;
+$terminal-text:      #ACACAC;
+$terminal-white:     #FFFFFF;
+$terminal-green:     #1a7f6e;
+$terminal-carts:     #8B0000;
+
+
+
+// Основные шрифты
+@mixin f-pixel($size: 11px, $color: $terminal-text) {
+  font-family: $font-terminal;
+  font-size: $size;
+  color: $color;
+  font-weight: normal;
+}
+
+@mixin f-gothic($size: 18px, $color: $terminal-name) {
+  font-family: $font-names;
+  font-size: $size;
+  color: $color;
+  font-weight: 300;
+}
+
+// Эффекты
+@mixin scan-lines {
+  &::before {
+    content: " ";
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), 
+                linear-gradient(90deg, rgba($terminal-voiding, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 3px, 2px 100%;
+    pointer-events: none;
+    z-index: 3000;
+  }
+}
+
+@mixin ui-corners($size: 15px, $thickness: 2px, $color: $terminal-elements1) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px;
+    width: $size; height: $size;
+    border-top: $thickness solid $color;
+    border-left: $thickness solid $color;
+    pointer-events: none;
+  }
+}

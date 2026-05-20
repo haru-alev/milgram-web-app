@@ -1,0 +1,416 @@
+{
+  "001": [
+    {
+      "verdict": "fifty_fifty",
+      "sessionId": "user_1779227128059_maswhvxhv",
+      "timestamp": "2026-05-19T21:47:53.987Z"
+    },
+    {
+      "verdict": "innocent",
+      "sessionId": "user_1779227128059_maswhvxhv",
+      "timestamp": "2026-05-19T21:47:58.763Z"
+    },
+    {
+      "verdict": "guilty",
+      "sessionId": "user_1779227128059_maswhvxhv",
+      "timestamp": "2026-05-19T21:48:01.539Z"
+    },
+    {
+      "verdict": "guilty",
+      "sessionId": "user_1779227128059_maswhvxhv",
+      "timestamp": "2026-05-19T21:48:03.530Z"
+    },
+    {
+      "verdict": "guilty",
+      "sessionId": "user_1779227128059_maswhvxhv",
+      "timestamp": "2026-05-19T21:48:05.459Z"
+    },
+    {
+      "verdict": "guilty",
+      "sessionId": "user_1779227128059_maswhvxhv",
+      "timestamp": "2026-05-19T21:48:07.675Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:50:45.802Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:50:47.690Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:50:48.674Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:50:49.649Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:50:50.842Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:50:52.505Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:50:53.961Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:50:56.402Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:50:57.850Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:00.082Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:01.097Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:03.826Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:04.714Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:51:20.497Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:51:22.754Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:51:23.306Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:51:23.585Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:24.273Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:24.505Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:24.673Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:24.865Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:25.041Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:25.209Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:25.369Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:25.561Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:25.713Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:25.897Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:26.058Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:26.650Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:26.841Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:27.041Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:27.834Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:28.666Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:30.562Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:51:31.673Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:00.417Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:01.849Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:13.897Z"
+    }
+  ],
+  "002": [
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:17.265Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:18.233Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:33.530Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:54:13.064Z"
+    }
+  ],
+  "003": [
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:42.313Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:42.529Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:42.857Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:43.065Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:43.241Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:43.513Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:43.690Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:43.969Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:44.241Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:44.394Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:45.241Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:45.584Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:45.761Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:45.984Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:46.929Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:47.169Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:54:11.321Z"
+    }
+  ],
+  "004": [
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:49.113Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:49.393Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:50.281Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-19T21:52:50.481Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:51.090Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:51.257Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:51.416Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-19T21:52:51.545Z"
+    }
+  ],
+  "---": [
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T16:57:46.090Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T16:57:47.810Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T16:57:49.977Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T16:57:51.074Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T16:57:51.697Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:25:53.175Z"
+    }
+  ],
+  "007": [
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:46:15.029Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:16.685Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:46:17.140Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:17.532Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:46:17.948Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:46:18.148Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:46:18.316Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:46:18.476Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:18.996Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:46:19.316Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:19.692Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:46:20.020Z"
+    },
+    {
+      "verdict": "innocent",
+      "timestamp": "2026-05-20T17:46:20.204Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:21.228Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:21.893Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:22.773Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:23.957Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:24.973Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:27.045Z"
+    },
+    {
+      "verdict": "guilty",
+      "timestamp": "2026-05-20T17:46:28.845Z"
+    }
+  ]
+}

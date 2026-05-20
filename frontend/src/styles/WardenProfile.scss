@@ -1,0 +1,293 @@
+@import 'variables';
+
+.warden-profile {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  @include f-pixel(14px, $terminal-text); 
+  background-color: $terminal-fond;
+  text-transform: uppercase;
+
+  // Верх
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0 10px;
+  }
+
+  &__title {
+    @include f-gothic(clamp(2rem, 5vw, 3.5rem), $terminal-name); 
+    margin: 0;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    text-shadow: 0 0 15px rgba($terminal-voiding, 0.3);
+  }
+
+  &__title-line {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(90deg, $terminal-elements1 70%, transparent);
+  }
+
+  &__id {
+    @include f-pixel(1.8rem, $terminal-name);
+    letter-spacing: 2px;
+  }
+
+  &__confidential {
+    text-align: right;
+    @include f-pixel(10px, $terminal-elements1);
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+  }
+
+  // Основной внутренний контейнер
+  &__inner {
+    border: 1px solid $terminal-frame;
+    background: $terminal-warp;
+    padding: 30px;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba($terminal-fond, 0.5);
+  }
+
+  &__main-section {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  &__photo-box {
+    width: 240px;
+    height: 340px;
+    border: 1px solid $terminal-frame;
+    background: $terminal-fond;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    @include ui-corners(20px, 2px, $terminal-name);
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: grayscale(40%) contrast(1.1);
+  }
+
+  &__stats {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  &__stat-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba($terminal-frame, 0.5);
+    padding: 14px 0;
+    @include f-pixel(13px);
+  }
+
+
+  &__stat-label {
+    color: $terminal-elements1;
+  }
+
+  &__stat-value {
+    color: $terminal-name; 
+    @include f-pixel(13px, $terminal-name);
+    letter-spacing: 1px;
+  }
+
+
+  &__attributes {
+    margin-top: 25px;
+    
+  }
+
+  &__attributes-label {
+    @include f-pixel(11px, $terminal-elements1); 
+    margin-bottom: 12px; 
+    display: block;
+  }
+
+
+  &__tags {
+    display: flex; 
+    gap: 10px; 
+    flex-wrap: wrap;
+  }
+
+  &__tag {
+    border: 1px solid $terminal-frame;
+    padding: 5px 12px;
+    @include f-pixel(11px, $terminal-text);
+    background: rgba($terminal-frame, 0.2);
+  }
+
+  // Биография
+  &__bio {
+    @include f-pixel(15px, $terminal-text);
+    line-height: 1.7;
+    margin: 40px 0;
+    padding: 0 20px;
+    text-align: justify;
+    text-transform: none;
+    
+  }
+
+  // плюсики
+  &__accordion-list {
+    margin-top: 50px;
+  }
+
+  &__acc-item {
+    border-top: 1px solid $terminal-frame;
+  }
+
+  &__acc-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 15px;
+    cursor: pointer;
+    @include f-pixel(14px, $terminal-elements1);
+    transition: 0.3s;
+
+    &:hover { 
+      background: rgba($terminal-name, 0.05); 
+      color: $terminal-name; 
+    }
+  }
+
+  &__acc-icon {
+    color: $terminal-name; 
+    letter-spacing: 2px;
+  }
+
+  &__acc-content {
+    padding: 20px 30px;
+    border-left: 1px solid $terminal-elements1;
+    margin-left: 15px;
+    background: rgba($terminal-white, 0.01);
+  }
+
+
+  &__log-entry {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+
+  &__log-title {
+    @include f-pixel(12px, $terminal-elements1); 
+    margin-bottom: 10px;
+  }
+
+  &__log-text {
+    @include f-pixel(13px, $terminal-text); 
+    line-height: 1.6;
+    text-transform: none;
+  }
+
+  // Навигация с кнопками
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 60px;
+  }
+
+  &__nav-btn {
+    flex: 1;
+    background: $terminal-warp;
+    border: 1px solid $terminal-frame;
+    @include f-pixel(12px, $terminal-elements1);
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+
+    &:hover { 
+      border-color: $terminal-name; 
+      color: $terminal-name; 
+      background: rgba($terminal-elements1, 0.1); 
+    }
+
+    &--secret {
+      color: $terminal-elements1; 
+      border-color: rgba($terminal-elements1, 0.4); 
+
+      &:hover { 
+        color: $terminal-voiding; 
+        border-color: $terminal-voiding; 
+        background: rgba($terminal-elements1, 0.1); 
+      }
+    }
+  }
+
+  // Подвал страницы
+  &__footer {
+    margin: 100px auto 50px;
+    border-top: 1px solid $terminal-frame;
+    padding-top: 30px;
+  }
+
+  &__scroll-top {
+    @include f-pixel(14px, $terminal-elements2);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: 100%;
+
+    &:hover {
+      color: $terminal-voiding;
+      
+      .warden-profile__arrow-line {
+        transform: translateY(-5px);
+        
+        svg path {
+          stroke: $terminal-voiding;
+        }
+      }
+    }
+  }
+
+  &__arrow-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    
+    svg {
+      width: 24px;
+      height: 24px;
+      
+      path {
+        stroke: $terminal-elements2;
+        stroke-width: 2;
+        fill: none;
+        transition: stroke 0.3s ease;
+      }
+    }
+  }
+
+  &__footer-text {
+    display: block;
+    margin-top: 8px;
+  }
+
+  // Выход
+  &__terminate {
+    @include f-pixel(12px, $terminal-elements1);
+    text-align: right;
+    margin-top: 20px;
+    cursor: pointer;
+
+    &:hover { 
+      color: $terminal-name;
+    }
+  }
+}

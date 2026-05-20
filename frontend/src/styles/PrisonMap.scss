@@ -1,0 +1,341 @@
+@import 'variables';
+
+.prison-map {
+  margin-top: -30px; 
+  --accent-color: rgba($terminal-voiding, 0.9);
+  --accent-color-rgb: 255, 51, 102;
+  
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    $terminal-fond 0%,
+    rgba(var(--accent-color-rgb), 0.15) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    @include f-pixel(11px, $terminal-text);
+    background: rgba($terminal-fond, 0.9);
+    z-index: 10;
+    border-bottom: 1px solid $terminal-frame;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__back-btn {
+    background: none;
+    border: none;
+    @include f-pixel(11px, $terminal-elements1);
+    padding: 5px 0 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+
+    &:hover {
+      color: $terminal-name;
+      transform: translateX(-3px);
+    }
+  }
+
+  &__reset-btn {
+    background: none;
+    border: none;
+    @include f-pixel(11px, $terminal-elements1);
+    padding: 5px 0 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+
+    &:hover {
+      color: var(--accent-color);
+      transform: translateX(3px);
+    }
+  }
+
+  &__welcome {
+    color: $terminal-name;
+    padding: 5px 0 15px;
+  }
+
+  &__main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(200px, 280px) 1fr minmax(200px, 280px);
+    gap: 0px;
+    padding: 5px 0;
+    position: relative;
+    z-index: 5;
+    min-height: 0;
+    height: calc(100vh - 70px);
+    overflow: hidden;
+  }
+
+  &__panel {
+    background: rgba($terminal-warp, 0.85);
+    border: 1px solid rgba($terminal-frame, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10;
+
+  }
+
+  &__label {
+    @include f-pixel(10px, $terminal-elements1);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $terminal-frame;
+    padding-bottom: 8px;
+  }
+
+  &__dossier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__dossier-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  &__empty-text {
+    @include f-pixel(14px, $terminal-voiding);
+    margin-bottom: 10px;
+  }
+
+  &__empty-hint {
+    @include f-pixel(10px, $terminal-elements1);
+  }
+
+  &__portrait {
+    width: 120px;
+    height: 120px;
+    border: 2px solid;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+
+  &__dossier-name {
+    @include f-pixel(18px, $terminal-name);
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  &__dossier-id {
+    @include f-pixel(10px, $terminal-elements1);
+    text-align: center;
+  }
+
+  &__dossier-bio {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 15px; 
+    padding: 8px;
+    background: rgba($terminal-fond, 0.3);
+    border-left: 2px solid var(--accent-color);
+
+    p {
+      @include f-pixel(9px, $terminal-text);
+      margin: 5px 0;
+      margin-left: 10px; 
+      line-height: 1.4;
+
+      span {
+        color: var(--accent-color);
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &__open-btn {
+    background: transparent;
+    border: 1px solid $terminal-text;
+    @include f-pixel(10px, $terminal-text);
+    padding: 6px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+
+    &:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+  }
+
+  &__history {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+  }
+
+  &__history-empty {
+    @include f-pixel(9px, $terminal-elements1);
+    text-align: center;
+    padding: 15px;
+  }
+
+  &__history-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border: 1px solid rgba($terminal-frame, 0.5);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba($terminal-fond, 0.3);
+
+    &:hover {
+      border-color: var(--accent-color);
+      background: rgba(var(--accent-color-rgb), 0.1);
+    }
+
+    &.active {
+      border-color: var(--accent-color);
+      background: rgba(var(--accent-color-rgb), 0.15);
+    }
+  }
+
+  &__history-time {
+    @include f-pixel(8px, $terminal-elements1);
+    font-family: monospace;
+  }
+
+  &__history-name {
+    @include f-pixel(10px, $terminal-name);
+    flex: 1;
+  }
+
+  &__history-id {
+    @include f-pixel(8px, $terminal-elements1);
+    font-family: monospace;
+  }
+
+  &__clear-history {
+    background: transparent;
+    border: 1px solid $terminal-frame;
+    @include f-pixel(9px, $terminal-elements1);
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+
+    &:hover {
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+  }
+
+  &__map-area {
+    position: relative;
+    overflow: auto;
+    border: 2px solid var(--accent-color);
+    background: $terminal-carts;
+    box-shadow: 0 0 20px rgba(var(--accent-color-rgb), 0.3);
+    overscroll-behavior: contain;
+    
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+      background: rgba($terminal-fond, 0.5);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--accent-color);
+      border-radius: 5px;
+    }
+    
+    &::-webkit-scrollbar-corner {
+      background: rgba($terminal-fond, 0.5);
+    }
+  }
+
+  &__map-transform {
+    transform-origin: 0 0;
+    width: 1100px;
+    height: 700px;
+    transition: transform 0.05s linear;
+  }
+}
+
+// Tooltip
+.map-tooltip {
+  position: fixed;
+  background: rgba($terminal-fond, 0.92);
+  border: 2px solid;
+  border-radius: 8px;
+  padding: 6px 12px;
+  pointer-events: none;
+  animation: tooltipFade 0.15s ease;
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+
+  &__name {
+    font-family: 'StickNoBills', serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  &__id {
+    font-family: monospace;
+    font-size: 0.65rem;
+    color: $terminal-elements1;
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+}
+
+@keyframes tooltipFade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Блокирует скролл страницы
+body:has(.prison-map__map-area:hover) {
+  overflow: hidden;
+}
+
+.prison-map__map-area {
+  overscroll-behavior: contain;
+}
+
+
+
+
+
+
+

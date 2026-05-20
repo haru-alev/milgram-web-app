@@ -1,0 +1,225 @@
+@import 'variables';
+
+.selection-page {
+  position: relative; 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: $terminal-fond;
+  @include f-pixel(14px, $terminal-text);
+
+  .back-link-btn {
+    background: none;
+    border: none;
+    @include f-pixel(11px, $terminal-elements1);
+    padding: 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+    position: absolute;
+    left: 20px;
+    top: -10px;
+
+    &:hover {
+      color: $terminal-name;
+      transform: translateX(-3px);
+    }
+  }
+
+  .top-management-row {
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    margin-bottom: 70px;
+  }
+
+  // Стиль карточки
+  .milgram-card {
+    position: relative;
+    width: 185px; 
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    &.large { width: 225px; }
+
+    --accent: #{$terminal-voiding}; 
+
+    .double-frame-container {
+      position: relative;
+      padding: 10px;
+
+      .outer-decor-corners {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        pointer-events: none;
+        transition: 0.4s ease;
+        opacity: 0.3;
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          width: 30px; height: 30px;
+          border: 1px solid var(--accent);
+        }
+        &::before { top: 0; left: 0; border-right: 0; border-bottom: 0; }
+        &::after { bottom: 0; right: 0; border-left: 0; border-top: 0; }
+      }
+    }
+
+    .card-border-outer {
+      padding: 1px; 
+      background: $terminal-frame;
+      clip-path: polygon(
+        12% 0%, 42% 0%, 45% 5%, 55% 5%, 58% 0%, 88% 0%, 
+        100% 10%, 100% 46%, 96% 50%, 100% 54%, 100% 90%, 
+        88% 100%, 58% 100%, 55% 95%, 45% 95%, 42% 100%, 12% 100%, 
+        0% 90%, 0% 54%, 4% 50%, 0% 46%, 0% 10%
+      );
+
+      .card-content-inner {
+        background: $terminal-warp;
+        padding: 15px; 
+        display: flex; 
+        flex-direction: column;
+        clip-path: inherit; 
+        height: 100%;
+      }
+    }
+
+    .card-id {
+      display: block; 
+      text-align: left; 
+      @include f-pixel(1.5rem);
+      -webkit-text-stroke: 1px var(--accent); 
+      color: transparent;
+      transition: 0.3s;
+      opacity: 0.6;
+    }
+
+    .portrait-wrapper {
+      position: relative; 
+      height: 200px; 
+      margin: 10px 0; 
+      overflow: hidden; 
+      background: $terminal-fond;
+      border: 1px solid rgba($terminal-frame, 0.5);
+
+      .char-portrait { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover;
+        object-position: top center; 
+        filter: grayscale(100%) contrast(1.1); 
+        transition: 0.5s; 
+      }
+
+      .hover-status {
+        position: absolute; 
+        bottom: -45px; 
+        left: 0; 
+        width: 100%;
+        background: var(--accent); 
+        color: $terminal-fond; 
+        @include f-pixel(10px);
+        font-weight: bold; 
+        padding: 6px 0; 
+        transition: 0.3s;
+      }
+    }
+
+    .card-name { 
+      @include f-gothic(18px, $terminal-name);
+      letter-spacing: 1px; 
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      display: block;      
+      width: 100%;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      .card-border-outer { background: var(--accent); }
+      .outer-decor-corners {
+        opacity: 1;
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 5px var(--accent));
+      }
+      .card-id { color: var(--accent); -webkit-text-stroke: 0; opacity: 1; }
+      .char-portrait { filter: grayscale(0%); transform: scale(1.05); }
+      .hover-status { bottom: 0; }
+    }
+  }
+
+  .inmates-grid {
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; 
+    margin-top: 40px;
+  }
+
+  .guidance-section {
+    margin: 60px 0;
+    .guidance-title { 
+      @include f-gothic(2rem, $terminal-voiding);
+      letter-spacing: 8px; 
+      margin-bottom: 30px; 
+    }
+    .guidance-container {
+      display: flex; 
+      justify-content: center; 
+      gap: 40px;
+      .side-line { width: 1px; background: $terminal-frame; }
+      .guidance-text { 
+        max-width: 750px; 
+        @include f-pixel(14px, $terminal-text);
+        line-height: 1.8; 
+        .red { color: $terminal-voiding; font-weight: bold; } 
+      }
+    }
+  }
+
+  .es-card-wrapper {
+    position: relative;
+    
+    .es-glitch-tag {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 8px;
+      color: $color-es;
+      background: rgba($terminal-fond, 0.8);
+      padding: 2px 8px;
+      white-space: nowrap;
+      letter-spacing: 2px;
+      font-family: monospace;
+      animation: esTagBlink 1s infinite;
+    }
+  }
+
+  @keyframes esTagBlink {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; text-shadow: 0 0 5px $color-es; }
+  }
+
+  .select-prompt { 
+    @include f-pixel(16px, $terminal-elements1);
+    letter-spacing: 6px; 
+    margin-bottom: 50px;
+    color: $terminal-name;
+  }
+
+  .footer-warning {
+    margin-top: 80px; 
+    padding-bottom: 50px;
+    .warning-title { 
+      @include f-pixel(14px, $terminal-elements2);
+      letter-spacing: 8px; 
+    }
+    .warning-desc { 
+      @include f-pixel(11px, $terminal-elements1);
+    }
+  }
+}
+

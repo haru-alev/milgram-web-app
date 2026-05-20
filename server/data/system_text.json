@@ -1,0 +1,96 @@
+ {
+  "login": {
+    "title": "MILGRAM",
+    "subtitle": "PRISON_DATA_ENCRYPTION_V.4",
+    "placeholder": "ACCESS KEY",
+    "error": "ACCESS DENIED"
+  },
+
+  "title":{
+    "status": "STATUS: AUTHORIZED_AS_ES"
+  },
+
+  "profile": {
+      "name": "CHARACTER NAME:",
+      "age": "AGE:",
+      "role": "ROLE:",
+      "drive": "DRIVE:",
+      "crime": "CRIME:",
+      "gender": "GENDER:",
+      "height": "HEIGHT:",
+      "blood": "BLOOD:",
+      "status": "STATUS:",
+      "object": "OBJECT:",
+
+      "attributes": "ATTRIBUTES:",
+      "system_logs": "SYSTEM_LOGS",
+      "no_name": "NONE",
+      "no_id": "#---"
+  },
+
+
+  "navigation_warden": {
+    "warden_data": "[ WARDEN_DATA ]",
+    "inmate_data": "[ INMATE_DATA ]",
+    "facility_map": "[ FACILITY_MAP ]",
+    "warden_notes": "[ WARDEN_NOTES ]",
+    "secret_files": "[ SECRET_FILES ]",
+
+    "back_btn": "<- BACK",
+    "page": "PAGE TOP",
+    "terminate": "— TERMINATE_SESSION"
+  },
+
+  "warden_screen":{
+    "system_os": "SYSTEM_OS_MILGRAM_TERMINAL"
+  },
+
+
+  "prisonier_screen": {
+    "system_prisonier": "SECTOR 01 // INMATE_DATA",
+    "guidance": "GUIDANCE",
+    "intro_text": "[ Система идентифицировала десять субъектов. Возраст, пол и прошлое не имеют значения перед лицом главного факта: каждый из них — <span class='red'>убийца</span>. У меня нет их признаний, только их голоса. Моя задача — пробиться сквозь музыку, найти истину в их песнях и решить: заслуживает ли этот человек второго шанса? В MILGRAM нет места сомнениям. Только вердикт. ]",
+    "prompt": "SELECT_TARGET_FOR_ANALYSIS",
+    "warning_title": "[ SYSTEM_WARNING ]",
+    "warning_text": "Твое решение необратимо. Не позволяй им обмануть тебя.",
+
+    "system_id": "SYSTEM_ID: SUBJECT_N.",
+    "biometrics": "БИОМЕТРИЯ",
+    "role": "РОЛЬ",
+    "crime": "ПРЕСТУПЛЕНИЕ",
+    "quote": "ЦИТАТА",
+    "description": "ОПИСАНИЕ",
+    "notes": "ЗАМЕТКИ ЭСА",
+
+    "next_btn": "GO TO NEXT ->",
+    "prev_btn": "<- OR PREVIOUS",
+    "add_note": "ADD NOTE"
+  },
+
+
+  "map_screen": {
+    "system_map": "SECTOR 02 // FACILITY_MAP",
+    "welcome": "WELCOME_WARDEN: ES",
+    "header": "OBJECT_DOSSIER",
+    "empty_room":  "SELECT A ROOM",
+    "open_dossier": "OPEN DOSSIER",
+    "connected": "CONNECTED...",
+    "clear": "CLEAR HISTORY"
+    
+  },
+
+  "notes_screen": {
+    "system_note": "SECTOR 03 // [ WARDEN_NOTES ]",
+    "notes": "Enter entry...",
+    "save_note": "SAVE NOTE",
+    "update_note": "UPDATE NOTE",
+    "select": "WAITING FOR SELECTION...",
+    "selecttext": "Select a subject from the left panel"
+  }, 
+
+  "secret_screen": {
+    "system_secret": "SECTOR 04 // SECRET_FILES_IS_YOU"
+  }
+ 
+}
+

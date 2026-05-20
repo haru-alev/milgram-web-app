@@ -1,0 +1,60 @@
+@import 'variables';
+
+.login-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $terminal-fond; 
+    z-index: 50;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    animation: loginFadeIn 0.8s ease-out;
+
+    &__title {
+        @include f-gothic(clamp(2.5rem, 8vw, 4rem), $terminal-voiding);
+        margin-bottom: -5px;
+        letter-spacing: 15px; 
+        text-shadow: 0 0 15px rgba($terminal-voiding, 0.5);
+    }
+
+    &__subtitle {
+        @include f-pixel(0.7rem, $terminal-elements1);
+        margin-bottom: 40px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+    }
+
+    &__form {
+        display: block;
+    }
+
+    &__input {
+        border: 1px solid $terminal-frame; 
+        background: transparent;
+        color: $terminal-name;
+        padding: 12px 20px;
+        width: 280px;
+        @include f-pixel(1.1rem);
+        outline: none;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-radius: 0;
+
+        &::placeholder {
+            color: rgba($terminal-elements1, 0.5);
+        }
+
+        &:focus {
+            box-shadow: 0 0 20px rgba($terminal-voiding, 0.3);
+            border-color: $terminal-name;
+            background: rgba($terminal-white, 0.02);
+        }
+    }
+}
+
+@keyframes loginFadeIn {
+    from { opacity: 0; transform: translate(-50%, -45%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
