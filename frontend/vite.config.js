@@ -5,7 +5,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:5000'
+      '/api': {
+        target: 'https://milgram-backend.onrender.com',
+        changeOrigin: true,
+        secure: false
+      }
     }
   }
 })

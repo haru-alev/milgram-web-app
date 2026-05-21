@@ -9,6 +9,11 @@ import PrisonMap from './components/PrisonMap.jsx';
 import Notes from './components/Notes.jsx';
 import SecretFiles from './components/SecretFiles.jsx';
 
+// Динамически определяем адрес бэкенда
+const API_BASE = window.location.hostname === 'localhost' 
+  ? '' 
+  : 'https://milgram-backend.onrender.com';
+
 export default function App() {
   const [screen, setScreen] = useState('login'); 
   const [wardenProfile, setWardenProfile] = useState(null);
@@ -47,7 +52,8 @@ export default function App() {
       
       const last = prev[prev.length - 1];
     
-      fetch('http://localhost:5000/api/prisoners')
+      // Запрос идет на конкретный эндпоинт получения заключенных
+      fetch(`${API_BASE}/api/prisoners`)
         .then(res => res.json())
         .then(data => {
           setPrisonersData(data);
@@ -81,12 +87,13 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
+  
   useEffect(() => {
     Promise.all([
-      fetch('http://localhost:5000/api/prisoners').then(res => res.json()),
-      fetch('http://localhost:5000/api/system-text').then(res => res.json()),
-      fetch('http://localhost:5000/api/warden-profile').then(res => res.json()),
-      fetch('http://localhost:5000/api/secret-files').then(res => res.json())
+      fetch(`${API_BASE}/api/prisoners`).then(res => res.json()),
+      fetch(`${API_BASE}/api/system-text`).then(res => res.json()),
+      fetch(`${API_BASE}/api/warden-profile`).then(res => res.json()),
+      fetch(`${API_BASE}/api/secret-files`).then(res => res.json())
     ])
     .then(([pData, sText, wProfile, sFiles]) => {
       setPrisonersData(pData);
@@ -160,7 +167,7 @@ export default function App() {
           <div className="left">{getSystemTitle()}</div>
           <div className="center">{time}</div>
           <div className="right">
-            {systemText.title.status}
+            {systemText.title?.status}
             <div className={`menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <span></span><span></span><span></span>
             </div>
@@ -239,15 +246,15 @@ export default function App() {
             initialPrisoner={selectedPrisoner} 
             prisonersData={prisonersData}
             onBack={goBack}
-            onUpdate={updatePrisonerDataLocally}
             systemText={systemText}
+            updateLocally={updatePrisonerDataLocally}
           />
         )}
 
         {screen === 'files' && (
           <SecretFiles 
-            onBack={goBack}
             secretFilesData={secretFilesData}
+            onBack={goBack}
             systemText={systemText}
           />
         )}

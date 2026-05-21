@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Notes.scss';
 
+// Динамически определяем адрес бэкенда
+const API_BASE = window.location.hostname === 'localhost' 
+  ? '' 
+  : 'https://milgram-backend.onrender.com';
+
+
 export default function Notes({ initialPrisoner, prisonersData, onBack, onUpdate, systemText }) {
   const [activeSub, setActiveSub] = useState(initialPrisoner || null);
   const [history, setHistory] = useState([]);
@@ -53,7 +59,7 @@ export default function Notes({ initialPrisoner, prisonersData, onBack, onUpdate
 
   useEffect(() => {
     if (activeSub) {
-      fetch(`http://localhost:5000/api/notes/${activeSub.id}`)
+      fetch(`${API_BASE}/api/notes/${activeSub.id}`)
         .then(res => res.ok ? res.json() : [])
         .then(data => {
           setHistory(Array.isArray(data) ? data : []);
@@ -71,7 +77,7 @@ export default function Notes({ initialPrisoner, prisonersData, onBack, onUpdate
       return;
     }
     
-    fetch('http://localhost:5000/api/save-full-note', {
+    fetch('${API_BASE}/api/save-full-note', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 

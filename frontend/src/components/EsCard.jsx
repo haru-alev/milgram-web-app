@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/PrisonierCard.scss';
 
+// Динамически определяем адрес бэкенда
+const API_BASE = window.location.hostname === 'localhost' 
+  ? '' 
+  : 'https://milgram-backend.onrender.com';
+
+
 export default function EsCard({ prisoner, onBack, onNext, onPrev, systemText, setScreen }) {
   const [showData, setShowData] = useState(true);
   const [showDenied, setShowDenied] = useState(false);
@@ -17,7 +23,7 @@ export default function EsCard({ prisoner, onBack, onNext, onPrev, systemText, s
 
   // Загрузка заметок для Эс
   useEffect(() => {
-    fetch(`http://localhost:5000/api/notes/${prisoner.id}`)
+    fetch(`${API_BASE}/api/notes/${prisoner.id}`)
       .then(res => res.ok ? res.json() : [])
       .then(data => {
         setHistory(Array.isArray(data) ? data : []);

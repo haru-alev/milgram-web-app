@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import '../styles/PrisonierCard.scss';
 import EsCard from './EsCard';
 
+// Динамически определяем адрес бэкенда
+const API_BASE = window.location.hostname === 'localhost' 
+  ? '' 
+  : 'https://milgram-backend.onrender.com';
+
+
 export default function PrisonCard({ prisoner, onBack, onNext, onPrev, systemText, setScreen }) {
   const [isVoting, setIsVoting] = useState(false);
   const [guiltyPercent, setGuiltyPercent] = useState(0);
@@ -17,7 +23,7 @@ export default function PrisonCard({ prisoner, onBack, onNext, onPrev, systemTex
   // Истории заметок из warden_notes.json
   useEffect(() => {
     if (prisoner?.id) {
-      fetch(`http://localhost:5000/api/notes/${prisoner.id}`)
+      fetch(`${API_BASE}/api/notes/${prisoner.id}`)
         .then(res => res.json())
         .then(data => {
           setNotesHistory(Array.isArray(data) ? data : []);
@@ -55,7 +61,7 @@ export default function PrisonCard({ prisoner, onBack, onNext, onPrev, systemTex
 
   const loadVotes = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/votes/${prisoner.id}`);
+      const response = await fetch(`${API_BASE}/api/votes/${prisoner.id}`);
       const data = await response.json();
       if (data.success) {
         const votes = data.votes || [];
@@ -86,7 +92,7 @@ export default function PrisonCard({ prisoner, onBack, onNext, onPrev, systemTex
   const handleVote = async (choice) => {
     setIsVoting(true);
     try {
-      const response = await fetch('http://localhost:5000/api/vote', {
+      const response = await fetch('${API_BASE}/api/vote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
